@@ -26,8 +26,10 @@ def calculate_receipt_points(receipt):
 
     # Rule 2: 50 points if the total is a round dollar amount with no cents
     total_amount = float(receipt['total'])
-    if total_amount.is_integer():
-        total_points += 50
+     if total_amount.is_integer():
+         total_points += 50
+    # if abs(total_amount - round(total_amount)) < 0.01:
+    #     total_points += 50
 
     # Rule 3: 25 points if the total is a multiple of 0.25
     if total_amount % 0.25 == 0:
@@ -56,10 +58,10 @@ def calculate_receipt_points(receipt):
     purchase_time = receipt['purchaseTime']
     purchase_hour = int(purchase_time.split(':')[0])
     purchase_minute = int(purchase_time.split(':')[1])
-    if purchase_hour == 14 and purchase_minute > 0:
+    if (purchase_hour == 14 and purchase_minute > 0) or (purchase_hour == 15):
         total_points += 10
-    elif purchase_hour == 15:
-        total_points += 10
+
+
 
     # Return the total points calculated/awarded
     return total_points
