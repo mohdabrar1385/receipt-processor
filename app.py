@@ -9,14 +9,15 @@ receipt_points_store = {}
 
 def calculate_receipt_points(receipt):
     """
-    Calculates points awarded to a receipt based on defined rules.
+    This function calculates points awarded to a receipt based on defined rules.
 
     Args:
-    - receipt (dict): The receipt data containing retailer, purchaseDate, purchaseTime, items, and total.
+    - receipt (dict): It takes one argument that has receipt data containing retailer, purchaseDate, purchaseTime, items, and total.
 
     Returns:
-    - int: Total points awarded for the receipt.
+    - int: Returns the total points awarded for the receipt.
     """
+    # Initially total points are zero
     total_points = 0
 
     # Rule 1: One point for every alphanumeric character in the retailer name
@@ -60,17 +61,19 @@ def calculate_receipt_points(receipt):
     elif purchase_hour == 15:
         total_points += 10
 
+    # Return the total points calculated/awarded
     return total_points
 
 @app.route('/receipts/process', methods=['POST'])
 def process_receipt():
     """
-    Endpoint to submit a receipt for processing and calculate points.
+    This is an Endpoint to submit a receipt for processing and calculate points.
 
-    Expects a JSON payload with retailer, purchaseDate, purchaseTime, items, and total.
+    It Expects a JSON payload with retailer, purchaseDate, purchaseTime, items, and total.
     Returns a JSON response with an ID for the receipt.
 
-    Returns:
+    Returns: 
+    It return a JSON id or error based on success or not
     - JSON: {"id": receipt_id} if successful, or {"error": "Invalid receipt"} if missing required fields.
     """
     receipt_data = request.json

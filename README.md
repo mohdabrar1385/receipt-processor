@@ -22,6 +22,8 @@ This is a web service to process receipts and calculate points based on specifie
 
 3. The application will be running on `http://localhost:8080`.
 
+## To test the Application, use Postman
+
 ## API Endpoints
 
 ### Process Receipts
