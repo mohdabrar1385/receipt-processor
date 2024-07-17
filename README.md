@@ -53,7 +53,8 @@ This is a web service to process receipts and calculate points based on specifie
 
 - Paste the following JSON payload in the body section:
 
-'''{
+    '''
+    {
         "retailer": "Target",
         "purchaseDate": "2022-01-01",
         "purchaseTime": "13:01",
@@ -62,7 +63,8 @@ This is a web service to process receipts and calculate points based on specifie
             {"shortDescription": "Emils Cheese Pizza", "price": "12.25"}
         ],
         "total": "35.35"
-    }'''
+    }
+    '''
 
 
 ## GET using Postman:
