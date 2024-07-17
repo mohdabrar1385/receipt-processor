@@ -39,7 +39,7 @@ This is a web service to process receipts and calculate points based on specifie
 - **Response:** JSON containing the points awarded for the receipt
 
 
-## Example using Postman:
+## POST using Postman:
 
 - Open Postman and set up a new request.
 
@@ -50,20 +50,21 @@ This is a web service to process receipts and calculate points based on specifie
 - Go to the Body tab, select raw, and choose JSON (application/json) from the dropdown.
 
 - Paste the following JSON payload in the body section:
-    {
-        "retailer": "Target",
-        "purchaseDate": "2022-01-01",
-        "purchaseTime": "13:01",
-        "items": [
-            {"shortDescription": "Mountain Dew 12PK", "price": "6.49"},
-            {"shortDescription": "Emils Cheese Pizza", "price": "12.25"}
-        ],
-        "total": "35.35"
-    }
+
+-    {
+-        "retailer": "Target",
+-        "purchaseDate": "2022-01-01",
+-        "purchaseTime": "13:01",
+-        "items": [
+-            {"shortDescription": "Mountain Dew 12PK", "price": "6.49"},
+-            {"shortDescription": "Emils Cheese Pizza", "price": "12.25"}
+-        ],
+-        "total": "35.35"
+-    }
 
 
 
-## Example using Postman:
+## GET using Postman:
 
 - Set up a new request in Postman.
 
