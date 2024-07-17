@@ -78,3 +78,8 @@ This is a web service to process receipts and calculate points based on specifie
 - Click on Send to submit the request.
 
 - You will receive a JSON response containing the points awarded for the specified receipt ID.
+
+
+## GitHub Repository
+
+Find the GitHub repository for this project in `receipt-processor-challenge.txt`.
